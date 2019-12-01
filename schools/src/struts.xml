@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+<package name="access" extends="struts-default" namespace="/">
+     <!--会员登录/注销 -->
+     <action name="AdminAction_*" class="adminAction" method="{1}">
+      <result name="logout">/login.jsp</result>
+       <result name="stu_index">/index_stu.jsp</result>
+       <result name="tex_index">/index_tex.jsp</result>
+       <result name="user_index">/index_user.jsp</result>
+    </action>
+</package>
+
+<package name="teacher" extends="struts-default" namespace="/">
+     <!--会员登录/注销 -->
+     <action name="tex_*" class="courseAction" method="{1}">
+      <result name="courselist" >/page/course/course_list.jsp</result>
+      <result name="courseadd">/page/course/course_add.jsp</result>
+       <result name="get">/page/course/course_edit.jsp</result>
+        <result name="checklist">/page/check/check_list.jsp</result>
+    </action>
+</package>
+
+<package name="check" extends="struts-default" namespace="/">
+     <action name="check_*" class="checkAction" method="{1}">
+      <result name="list" >/page/check/check_listsheet.jsp</result>
+      <result name="xmllist" >/page/check/xml_list.jsp</result>
+      <result name="error" >/error.jsp</result>
+      <result name="return" >/return.jsp</result>
+    </action>
+</package>
+
+<package name="dep" extends="struts-default" namespace="/">
+     <action name="dep_*" class="depAction" method="{1}">
+      <result name="list" >/page/department/depatrment_list.jsp</result>
+      <result name="error" >/error.jsp</result>
+      <result name="get" >/page/department/department_edit.jsp</result>
+    </action>
+</package>
+
+<package name="classes" extends="struts-default" namespace="/">
+     <action name="classes_*" class="classesAction" method="{1}">
+      <result name="list" >/page/classes/classes_list.jsp</result>
+      <result name="error" >/error.jsp</result>
+      <result name="get" >/page/classes/classes_edit.jsp</result>
+    </action>
+</package>
+
+<package name="xml" extends="struts-default" namespace="/">
+     <action name="xml_*" class="com.gxuwz.schools.action.XmlAction" method="{1}">
+    </action>
+</package>
+
+<constant name="struts.locale" value="zh_CN" />
+ <constant name="struts.i18n.encoding" value="utf-8"/>
+</struts>    
